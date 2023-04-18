@@ -76,6 +76,9 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                     # Send response to client
                     conn.sendall(response.encode())
 
+                elif command == "quit": 
+                    conn.close()
+
                 else:
                     response = "Invalid command"
                     conn.sendall(response.encode())

@@ -25,6 +25,9 @@ class LoginWindow(tk.Frame):
         self.signup_button = tk.Button(self.master, text="Signup", command=self.signup)
         self.signup_button.pack()
 
+        self.quit_button = tk.Button(self.master, text="Quit", command=self.quit)
+        self.quit_button.pack()
+
         self.status_label = tk.Label(self.master, text="")
         self.status_label.pack()
 
@@ -45,6 +48,8 @@ class LoginWindow(tk.Frame):
             # Receive response from server
             data = s.recv(1024)
             self.status_label.config(text=data.decode())
+
+            
 
     def signup(self):
         username = self.username_entry.get()
